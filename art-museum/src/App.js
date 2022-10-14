@@ -9,6 +9,6 @@ function App() {
   );
 }
 
-// console.log(harvardArt)
+
 
 export default App;

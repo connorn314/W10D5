@@ -1,16 +1,21 @@
 import React from "react"
+import { NavLink } from "react-router-dom";
+import "./GalleryNavigation.css"
 
 
-const GalleryNavigation = props => {
+const GalleryNavigation = ({galleries}) => {
 	return (
-		<div>
-			<h1>Galleries:</h1>
-			{props.galleries.map((gallery) => {
-				return (
-					<p key={gallery.id}>{gallery.name}</p>
-				)
-			})}
-		</div>
+			<nav>
+				<NavLink to="/">Home</NavLink>
+				<h1>Galleries:</h1>
+				{galleries.map((gallery) => {
+					return (
+						<NavLink to={`/galleries/${gallery.id}`} key={gallery.id}>
+							{gallery.name}
+						</NavLink>
+					)
+				})}
+			</nav>
 	);
 }
 
